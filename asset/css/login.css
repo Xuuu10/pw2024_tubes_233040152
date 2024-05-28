@@ -1,0 +1,133 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(../img/paket1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  height: 640px;
+  margin-top: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box.login {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 60px;
+}
+
+.form-box h2 {
+  margin-bottom: 30px;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 15px;
+  background: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  color: black;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.ingat {
+  font-size: 0.9em;
+  color: black;
+  font-weight: 500;
+  margin: 10px 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingat label input {
+  margin-right: 5px;
+}
+
+.ingat a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px 0;
+  background: rgb(39, 71, 233);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #120499;
+}
+
+.login {
+  font-size: 0.9rem;
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.login p a {
+  color: #261970;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login p a:hover {
+  text-decoration: underline;
+}
