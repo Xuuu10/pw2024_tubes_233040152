@@ -41,7 +41,8 @@ if (isset($_POST['register'])) {
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
                 </div>
                 <div class="ingat">
                     <label><input type="checkbox">

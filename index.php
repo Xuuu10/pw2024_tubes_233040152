@@ -1,3 +1,15 @@
+<?php
+
+
+require 'functions.php';
+
+$members = query("SELECT * FROM members");
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +23,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="asset/css/webeducation.css">
+  <link rel="stylesheet" href="asset/css/index.css?=<?= time(); ?>">
 
   <!-- BOX ICONS -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -41,10 +53,10 @@
             <a class="nav-link" href="#about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#service">Services</a>
+            <a class="nav-link" href="#galery">Galery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#menu">Product</a>
+            <a class="nav-link" href="#product">Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
@@ -61,7 +73,9 @@
   </nav>
   <!-- Akhir Navbar -->
 
-  <section class="vh-100 w-100" id="slide">
+
+  <!-- Galery -->
+  <section class="vh-100 w-100 justify-content-center" id="galery">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -74,10 +88,17 @@
           aria-label="Slide 4"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
           aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+          aria-label="Slide 6"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="asset/img/slide2.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <video autoplay loop>
+            <source src="asset/videos/video1.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="carousel-item">
           <img src="asset/img/slide1.jpg" class="d-block w-100">
@@ -104,6 +125,7 @@
       </button>
     </div>
   </section>
+  <!-- Akhir Galery -->
 
   <!-- HOME -->
   <section class="header-section vh-100" id="home">
@@ -175,62 +197,42 @@
 
 
   <!-- MENU -->
-  <section class="menu-section" id="menu">
+  <section class="menu-section h-100" id="product">
 
-    <p class="menu-title fw-bold text-center pb-5 mt-5 text-dark">Join With Us</p>
-
-    <div class="row justify-content-center gap-5 pt-3">
-      <div class="card text-center bg-transparent" style="width: 25rem;">
-        <img src="asset/img/paket3.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">Paket 1</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
+    <p class="menu-title fw-bold text-center pb-5 text-dark">Join With Us</p>
+  <div class="container">
+    <div class="row d-flex justify-content-center gap-5 flex-wrap">
+      <?php foreach ($members as $member): ?>
+        <div class="card bg-light text-center p-3" style="width: 25rem; height: 40rem;">
+          <img src="asset/img/<?= $member["gambar"]; ?>" class="card-img-top rounded shadow-lg">
+          <div class="card-body text-white">
+            <p class="card-text fw-bold text-dark"><?= $member["judul"]; ?></p>
+            <p class="text-dark fs-6">
+              <?= $member["deskripsi"]; ?>
+            </p>>
+              <a href="#" class="btn btn-dark" style="margin-top:10px">Daftar</a>
+          </div>
         </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 25rem;">
-        <img src="asset/img/paket6.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">Paket 2</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 25rem;">
-        <img src="asset/img/paket4.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">Paket 3</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 25rem;">
-        <img src="asset/img/paket2.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">Paket 4</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 30rem;">
-        <img src="asset/img/paket5.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">VIV</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 20rem;">
-        <img src="asset/img/paket1.jpg" class="card-img-top rounded shadow-lg">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold text-dark">VVIV</p>
-          <a href="#" class="btn btn-dark">Daftar</a> <br>
-        </div>
-      </div>
+        <?php endforeach; ?>
     </div>
-
+    </div>
   </section>
   <!-- AKHIR MENU -->
 
 
+  <!-- Support -->
+
+  <div class="support">
+    <h1>SUPPORT US</h1>
+    <h2>SPONSORED BY</h2>
+  </div>
+
+  <!--  -->
+
+
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact" method="POST">
+  <!-- <section class="contact-section" id="contact" method="POST">
     <h1 class="section-title text-center mb-5 text-dark">Contact Us</h1>
     <div class="container justify-content-center">
       <div class="row">
@@ -257,8 +259,9 @@
             <input type="email" name="text" class="form-control border border-dark" placeholder="Telephone">
           </div>
           <div class="mb-3 ms-5" style="width: 60%;">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control border border-dark" id="exampleFormControlTextarea1" rows="5"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Coment</label>
+            <textarea class="form-control border border-dark" name="text-area" id="exampleFormControlTextarea1"
+              rows="5"></textarea>
           </div>
           <div class="ms-5">
             <input class="btn btn-blue" type="submit" value="Submit">
@@ -266,7 +269,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- AKHIR CONTACT -->
 
 

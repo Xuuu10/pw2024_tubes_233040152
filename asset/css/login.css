@@ -38,7 +38,7 @@ body {
 .form-box h2 {
   margin-bottom: 30px;
   color: black;
-  font-size: 24px;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -74,14 +74,14 @@ body {
 .input-box input:valid ~ label {
   top: -10px;
   font-size: 15px;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 .ingat {
   font-size: 0.9em;
-  color: black;
-  font-weight: 500;
+  color: #261970;
+  font-weight: bold;
   margin: 10px 0 20px;
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,6 @@ body {
 }
 
 .ingat a {
-  color: #4caf50;
   text-decoration: none;
 }
 

@@ -1,0 +1,75 @@
+/* Custom CSS for Admin Dashboard */
+
+/* Navigation */
+.navbar {
+    background-color: #343a40 !important; /* Warna latar belakang navigasi */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Ukuran font untuk merek */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff !important; /* Warna teks untuk tautan navigasi */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ccc !important; /* Warna teks untuk tautan navigasi saat dihover */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 56px; /* Tinggi navigasi */
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Atur tumpukan z-index di atas konten */
+    padding: 48px 0 0; /* Padding di atas dan bawah */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); /* Efek shadow di sisi */
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 56px); /* Sesuaikan ketinggian sesuai dengan ketinggian navigasi */
+    padding-top: .5rem;
+    overflow-x: hidden; /* Buang overflow horizontal */
+    overflow-y: auto; /* Tambahkan overflow vertikal */
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500; /* Ketebalan font untuk tautan sidebar */
+    color: #333; /* Warna teks untuk tautan sidebar */
+  }
+  
+  .sidebar .nav-link.active {
+    color: #007bff; /* Warna teks aktif untuk tautan sidebar */
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-top: 56px; /* Tinggi navigasi */
+  }
+  
+  .card {
+    margin-bottom: 30px; /* Jarak antara kartu */
+    border: none; /* Hapus border kartu */
+    border-radius: 8px; /* Tambahkan radius border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .1); /* Efek shadow kartu */
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Ukuran font untuk judul kartu */
+    margin-bottom: .5rem; /* Jarak antara judul dan konten kartu */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Ukuran font untuk konten kartu */
+  }
+
+  .card a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  

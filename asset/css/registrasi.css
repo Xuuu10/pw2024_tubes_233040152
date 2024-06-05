@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(../img/paket1.jpg);
+  background-image: url(../img/paket5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -65,7 +65,7 @@ body {
 .input-box input:valid ~ label {
   top: -10px;
   font-size: 15px;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -76,21 +76,22 @@ body {
   border: none;
   outline: none;
   font-size: 1em;
-  color: rgb(8, 33, 191);
+  color: black;
   font-weight: 600;
 }
 
 .ingat {
   font-size: 0.9em;
-  color: rgb(8, 33, 191);
-  font-weight: 500;
+  color: #261970;
+  font-weight: bold;
   margin: -15px 0 15px;
   display: flex;
   justify-content: space-between;
 }
 
 .ingat a {
-  color: rgb(8, 33, 191);
+  color: #261970;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -117,5 +118,6 @@ body {
 
 .login-register p {
   text-decoration: none;
-  color: white;
+  color: #261970;
+  font-weight: bold;
 }
