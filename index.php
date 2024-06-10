@@ -1,6 +1,5 @@
 <?php
 
-
 require 'functions.php';
 
 $members = query("SELECT * FROM members");
@@ -67,8 +66,12 @@ $members = query("SELECT * FROM members");
           </div> -->
       </div>
       <div class="ms-5">
+        <?php if(!isset($_SESSION ["login"])): ?>
         <a href="registrasi.php"><button class="btn  btn-primary ms-5 p-2"> Daftar </button></a>
         <a href="login.php"><button class="btn  btn-primary ms-5 p-2"> Login </button></a>
+        <?php else : ?>
+        <a href="admin/logout.php"><button class="btn  btn-danger ms-5 p-2" style="background-color:red;"> Logout </button></a>
+          <?php endif ?>
       </div>
   </nav>
   <!-- Akhir Navbar -->
@@ -206,11 +209,14 @@ $members = query("SELECT * FROM members");
         <div class="card bg-light text-center p-3" style="width: 25rem; height: 40rem;">
           <img src="asset/img/<?= $member["gambar"]; ?>" class="card-img-top rounded shadow-lg">
           <div class="card-body text-white">
-            <p class="card-text fw-bold text-dark"><?= $member["judul"]; ?></p>
+            <p class="card-text fw-bold text-dark"><?= $member["paket"]; ?></p>
             <p class="text-dark fs-6">
               <?= $member["deskripsi"]; ?>
             </p>>
-              <a href="#" class="btn btn-dark" style="margin-top:10px">Daftar</a>
+              <form action="admin/order.php" method="post">
+                <input type="hidden" name="paket" value="<?= $member["paket"]; ?>">
+              <a href="admin/order.php" type="sumbit" type="sum" class="btn btn-dark" style="margin-top:10px">Daftar</a>
+              </form>
           </div>
         </div>
         <?php endforeach; ?>

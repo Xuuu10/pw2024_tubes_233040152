@@ -47,7 +47,6 @@ if (isset($_POST['register'])) {
                 <div class="ingat">
                     <label><input type="checkbox">
                         Remember Me </label>
-                    <a href="#">Forget Password</a>
                 </div>
                 <button type="submit" name="register" class="btn">Register</button>
                 <div class="login-register">

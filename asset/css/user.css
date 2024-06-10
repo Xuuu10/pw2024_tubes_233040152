@@ -1,0 +1,18 @@
+
+.container {
+height: 100vh;
+background-color: blanchedalmond;
+border-radius: 20px;
+}
+
+.container h1 {
+    color: crimson;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+
+form .tombol-cari {
+    border: 2px solid black;
+}
+

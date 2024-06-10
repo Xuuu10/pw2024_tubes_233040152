@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+require 'functions.php';
 $conn = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040152');
 
 if (isset($_POST['login'])) {
@@ -14,16 +13,19 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) > 0) {
 
         // cek password
+
         $row = mysqli_fetch_assoc($result);
-        $_SESSION["login"] = true;
-        if ($row['id_role'] == '1') {
-            header("Location: admin.php");
-            exit;
-        } else { 
-            header("Location: index.php");
-            exit;
+        if (password_verify($password, $row["password"])) {
+            $_SESSION["login"] = true;
+            if ($row['id_role'] == 1) {
+                header("Location: admin/admin.php");
+                exit;
+            } else {
+                header("Location: index.php");
+                exit;
+            }
+
         }
-        // set session
 
     }
 
@@ -55,13 +57,8 @@ if (isset($_POST['login'])) {
             <form action="" method="POST">
                 <div class="input-box">
                     <span class="icon"><ion-icon></ion-icon></span>
-                    <input type="username" name="username" required>
+                    <input type="text" name="username" required>
                     <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon></ion-icon></span>
-                    <input type="email" name="email" required>
-                    <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon></ion-icon></span>
