@@ -65,8 +65,7 @@ $paket_options = get_paket_options();
                         <textarea class="form-control" id="form6Example7" name="message" rows="4"
                             placeholder="Contoh : Tambahan Trainer"></textarea>
                     </div>
-                    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Place
-                        order</button>
+                    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Pesan</button>
                 </form>
 
 
