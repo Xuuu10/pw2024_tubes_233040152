@@ -57,9 +57,9 @@ $members = query("SELECT * FROM members");
           <li class="nav-item">
             <a class="nav-link" href="#product">Member</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          </li> -->
           <!-- <div class="navbar-extra">
             <a href="" class="fs-2 ms-2 ps-5" id="search"><i class='bx bx-search' style='color:#ffffff'></i></a>
             <a href="" class="fs-2 ms-2" id="cart"><i class='bx bxs-cart' style='color:#ffffff'></i></a>
@@ -70,7 +70,7 @@ $members = query("SELECT * FROM members");
         <a href="registrasi.php"><button class="btn  btn-primary ms-5 p-2"> Daftar </button></a>
         <a href="login.php"><button class="btn  btn-primary ms-5 p-2"> Login </button></a>
         <?php else : ?>
-        <a href="admin/logout.php"><button class="btn  btn-danger ms-5 p-2" style="background-color:red;"> Logout </button></a>
+        <a href="admin/logout.php"><button class="btn  btn-danger ms-5 p-2" style="background-color:red;" onclick="return confirm('Apakah Anda Ingin Keluar?');"> Logout </button></a>
           <?php endif ?>
       </div>
   </nav>

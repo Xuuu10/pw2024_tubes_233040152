@@ -21,7 +21,7 @@ $paket_options = get_paket_options();
     <div class="container mt-5">
         <h1> Pesanan Anda </h1>
         <div class="row">
-            <div class="card p-5 rounded">
+            <div class="card p-5 rounded fw-bold">
 
                 <form method="post" action="submit_order.php">
 

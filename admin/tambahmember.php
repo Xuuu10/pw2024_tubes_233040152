@@ -31,7 +31,7 @@ if (isset($_POST['tambah'])) {
 
   <div class="container col-8">
 
-    <h1>Form Tambah Data Paket Member</h1>
+    <h1>Tambah Data Paket Member</h1>
 
     <form action="" method="POST">
       <div class="mb-3">

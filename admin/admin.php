@@ -29,7 +29,7 @@
           <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Home </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link btn btn-danger" style="background-color:red;" href="login.php">Logout </a>
+          <a class="nav-link btn btn-danger" style="background-color:red;" href="../login.php" onclick="return confirm('Are You Sure?');">Logout </a>
         </li>
       </ul>
     </div>
@@ -52,6 +52,11 @@
                 <i class="fas fa-users"></i> Users
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tambahmember.php">
+                <i class="fas fa-users"></i> Member
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -62,13 +67,12 @@
           <h1 class="h2">Dashboard</h1>
         </div>
 
-        <div class="row">
+        <div class="row fw-bold">
           <div class="col-md-6">
             <div class="card">
               <div class="card-body">
-                <a href="user.php">
-                <h5 class="card-title">Users</h5>
-                <p class="card-text">1500</p>
+                <a href="user.php" class="text-dark">
+                <h5 class="card-title">USERS</h5>
                 </a>
               </div>
             </div>
@@ -76,9 +80,8 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-body">
-                <a href="tambahmember.php">
-                <h5 class="card-title">Members</h5>
-                <p class="card-text">500</p>
+                <a href="tambahmember.php" class="text-dark fw-bold">
+                <h5 class="card-title">PAKET MEMBER</h5>
                 </a>
               </div>
             </div>

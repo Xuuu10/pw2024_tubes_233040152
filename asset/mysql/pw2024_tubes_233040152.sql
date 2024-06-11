@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 05, 2024 at 05:31 PM
+-- Generation Time: Jun 11, 2024 at 04:00 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `members` (
   `id` int NOT NULL,
   `gambar` varchar(255) NOT NULL,
-  `judul` varchar(50) NOT NULL,
+  `paket` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `deskripsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -38,11 +38,35 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `gambar`, `judul`, `deskripsi`) VALUES
+INSERT INTO `members` (`id`, `gambar`, `paket`, `deskripsi`) VALUES
 (1, 'paket3.jpg', 'Paket 1', 'Paket Starter (Basic): \n            Akses ke fasilitas gym dasar\n            Konsultasi awal dengan pelatih pribadi\n            Jadwal latihan dasar\n            Panduan diet umum\n            Biaya bulanan yang terjangkau'),
 (3, 'paket4.jpg', 'Paket 2', 'Transformasikan tubuh Anda dengan Paket Fit & Fab! Dapatkan akses ke peralatan gym modern, kelas harian seperti Zumba dan Yoga, serta sesi bulanan dengan pelatih pribadi. Ideal untuk Anda yang ingin bugar dan menawan dalam waktu singkat.'),
 (4, 'paket1.jpg', 'Paket 3', 'Tingkatkan kekuatan dan stamina dengan Paket Power Boost! Akses tak terbatas ke area angkat beban, program pelatihan intensif, dan sesi mingguan dengan pelatih kekuatan profesional. Dilengkapi dengan suplemen nutrisi khusus untuk mencapai puncak performa.'),
 (5, 'paket2.jpg', 'Paket 4', 'Ciptakan keseimbangan tubuh dan pikiran dengan Paket Ultimate Wellness. Selain fasilitas gym lengkap, nikmati kelas meditasi, terapi pijat mingguan, dan akses ke sauna serta jacuzzi. Dirancang untuk mencapai kebugaran total dan relaksasi maksimal.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemesanan`
+--
+
+CREATE TABLE `pemesanan` (
+  `id_pesanan` int NOT NULL,
+  `paket` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id_pesanan`, `paket`, `first_name`, `last_name`, `email`, `phone`, `message`) VALUES
+(1, 'Paket A', 'can', 'can', 'can@gmail.com', '0808080808', 'tambah'),
+(2, '', 'rudol', 'prasetyo', 'rudolsinuratbahul@gmaiil.com', '089786284', 'susuuuuu');
 
 -- --------------------------------------------------------
 
@@ -83,17 +107,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `gambar`, `username`, `email`, `password`, `id_role`) VALUES
-(1, '', 'Rudol_1001', 'rudolsinuratbahul@gmail.com', 'Rudol123', 1),
-(3, 'deffault.img', 'royyyy', 'royy@gmail.com', 'apaajawe123', 2),
-(4, 'deffault.img', 'monyet', 'royy@gmail.com', '123456789', 2),
-(5, 'deffault.img', 'rudolprasetyo', 'rudolprasetyo@gmail.com', 'niceguys', 2),
-(6, 'deffault.img', 'aku ya?', 'akujuga@gmail.com', '1234563', 2),
-(7, 'deffault.img', 'apapapa', 'abdba@gmail.com', '1234445', 2),
-(8, 'deffault.img', 'apa123', 'apa@gmail.com', '123456', 2),
-(9, 'deffault.img', 'Prasetyo10', 'Prasetyo10@gmail.com', 'prasetyo12345', 2),
-(10, '', 'nikennn', 'nikenn123@gmail.com', 'niken123', 2),
-(11, 'deffault.img', 'lllll', 'lllll@gmail.com', '54321', 2),
-(12, '', 'ufafgagu', 'afajgaufa@gmail.com', '54321', 2);
+(1, 'default.img', 'Rudol_1001', 'rudolsinuratbahul@gmail.com', '$2y$10$Sm53acde.mdFQxtIshXSr.yoTQGo16b4mLZNkzrenysXrzc1IY0Eu', 1),
+(14, 'deffault.img', 'rudolpras', 'prasetyosinurat10@gmail.com', '$2y$10$gFV8tCnd5fHdRccf45KDOusI5ctIPu8nut.NILQ5p5OihnNTxo0r2', 1),
+(17, '', 'admin', 'admin@gmail.com', '$2y$10$UD76wdxramaz8.jlvNkwX.z5KPLmOvj2o5Cbxv8ah8XQB/BhF5Xwy', 1),
+(19, 'deffault.img', 'rudolpra', 'rudolsinuratbahul@gmail.com', '$2y$10$vMTEkcObfJxwzMeFJl2YuuGeNLF27hUb4shgRptcc2UNHpPABSFXS', 2),
+(20, '666746c9991fa.png', 'gaugfuag', 'aggfagu@gmail.com', '$2y$10$mfdVr43gmRPBizJQCyDbne23g7vaiwI3rF67WFMZrIpu4IkMwXQFq', 2),
+(21, '6667474737b3b.png', 'adafafa', 'faffav@gmail.com', '$2y$10$/xkaqcX0kQP8DCztRXXf7uhCB6aKavtfY/X5YNOFK2R8bVLxk.Eji', 2),
+(22, '666749079470f.png', 'afafasf', 'afayv@gmail.com', '$2y$10$PspksgB6i7N7zI6BC4BFEuhx6DngP.JpVeIacIxzp7vMI7.uEBQC.', 2),
+(23, '66674959015f4.png', 'afaa', 'aga@gmail.com', '$2y$10$qi3qPhKJ0WqO/IWPe3.dpuDGDueOOHZp01KDOueCWeeAPIWaEOL.O', 2);
 
 --
 -- Indexes for dumped tables
@@ -104,6 +125,12 @@ INSERT INTO `users` (`id`, `gambar`, `username`, `email`, `password`, `id_role`)
 --
 ALTER TABLE `members`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id_pesanan`);
 
 --
 -- Indexes for table `role`
@@ -129,10 +156,16 @@ ALTER TABLE `members`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id_pesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
